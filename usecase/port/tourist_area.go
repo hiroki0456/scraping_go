@@ -6,7 +6,7 @@ import (
 )
 
 type TouristAreaInputPort interface {
-	GetTouristAreas(ctx context.Context)
+	GetTouristAreas(ctx context.Context, url string)
 }
 
 type TouristAreaOutputPort interface {
@@ -15,5 +15,5 @@ type TouristAreaOutputPort interface {
 }
 
 type TouristAreaRepository interface {
-	GetTouristAreas(ctx context.Context) (*entity.TouristArea, error)
+	GetTouristAreas(ctx context.Context, url string) (*entity.TouristArea, error)
 }

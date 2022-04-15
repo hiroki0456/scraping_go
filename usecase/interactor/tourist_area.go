@@ -17,8 +17,8 @@ func NewTouristAreaInputPort(outputPort port.TouristAreaOutputPort, touristAreaR
 	}
 }
 
-func (t *TouristArea) GetTouristAreas(ctx context.Context) {
-	ta, err := t.TouristAreaRepo.GetTouristAreas(ctx)
+func (t *TouristArea) GetTouristAreas(ctx context.Context, url string) {
+	ta, err := t.TouristAreaRepo.GetTouristAreas(ctx, url)
 	if err != nil {
 		t.OutputPort.RenderError(err)
 		return
